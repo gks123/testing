@@ -1,0 +1,36 @@
+openId = 105472377387765688487
+
+109738470457616864346
+
+
+
+ALTER TABLE contacts ENGINE MyISAM;
+ALTER IGNORE TABLE contacts ADD UNIQUE INDEX dupidx (id);
+ALTER TABLE contacts ENGINE InnoDB;
+
+
+<<<<<<< HEAD
+class OpportunitiesController extends AbstractActionController
+{
+
+   public function fetchOpportunityDetailsAction()
+    { 
+	    $paramsQuery = $this->getRequest()
+	    ->getPost()
+	    ->toArray();
+	    $emailTable = $this->getServiceLocator()->get('Reporting\Model\OpportunitiesTable');
+		$emailTable->setAdapter($this->getServiceLocator()->get('CustomDbAdapter'));
+	    $opportunity_details = $emailTable->fetchOpportunitiesTable($paramsQuery['opportunity_id']);
+	    $viewModel = new ViewModel(array(
+	    		"tagName" => $paramsQuery['tagName'],
+	    		"tagCondition" => $paramsQuery['tagCondition'],
+	    		'opportunityDetail' => $opportunity_details,
+	    ));
+	    $viewModel->setTerminal(true);
+	    return $viewModel->setTemplate('reporting/reporting/opportunityDetailView.phtml');
+=======
+
+&& target.hasClass("record_exist_green_image") === false && target.hasClass("record_exist_red_image") === false
+
+
+
